@@ -5,62 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>aviv.dev</title>
 
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-body {
+*{
     margin:0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-    background:#0b0b0f;
-    color:white;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'JetBrains Mono', monospace;
+    background:#050505;
+    color:#e5e5e5;
+    height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    height:100vh;
-    text-align:center;
 }
 
-.container {
-    max-width:700px;
+.container{
+    width:90%;
+    max-width:900px;
 }
 
-h1 {
-    font-size:48px;
-    margin-bottom:10px;
+.terminal{
+    background:#0a0a0a;
+    border:1px solid #111;
+    border-radius:12px;
+    padding:40px;
+    box-shadow:0 0 40px rgba(0,255,120,0.05);
 }
 
-p {
-    opacity:0.7;
-    font-size:18px;
+h1{
+    font-size:28px;
+    color:#22c55e;
+    margin-bottom:20px;
 }
 
-.status {
+.type{
+    color:#9ca3af;
+    margin-bottom:25px;
+}
+
+.prompt{
+    color:#22c55e;
+}
+
+.links{
     margin-top:30px;
-    padding:12px 18px;
-    border-radius:10px;
-    background:#111827;
-    display:inline-block;
-    border:1px solid #1f2937;
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
 }
 
-.dot {
-    height:10px;
-    width:10px;
+a{
+    color:#22c55e;
+    text-decoration:none;
+    border:1px solid #1a1a1a;
+    padding:10px 16px;
+    border-radius:8px;
+    transition:.2s;
+    font-size:14px;
+}
+
+a:hover{
     background:#22c55e;
-    border-radius:50%;
-    display:inline-block;
-    margin-right:8px;
+    color:black;
+    box-shadow:0 0 15px #22c55e;
+}
+
+.footer{
+    margin-top:40px;
+    font-size:12px;
+    opacity:.4;
 }
 </style>
 </head>
 
 <body>
-<div class="container">
-    <h1>aviv.dev</h1>
-    <p>If you can see this, GitHub Pages + domain are working.</p>
 
-    <div class="status">
-        <span class="dot"></span>
-        site live
+<div class="container">
+    <div class="terminal">
+
+        <h1>aviv.dev</h1>
+
+        <div class="type">
+            <span class="prompt">></span> initializing system...
+        </div>
+
+        <div class="type">
+            <span class="prompt">></span> domain connected ✔
+        </div>
+
+        <div class="type">
+            <span class="prompt">></span> github deployment active
+        </div>
+
+        <div class="type">
+            <span class="prompt">></span> status: <span style="color:#22c55e">online</span>
+        </div>
+
+        <div class="links">
+            <a href="#">tools</a>
+            <a href="#">projects</a>
+            <a href="#">downloads</a>
+            <a href="https://github.com/person10802477" target="_blank">github</a>
+        </div>
+
+        <div class="footer">
+            aviv.dev // private build environment
+        </div>
+
     </div>
 </div>
+
 </body>
 </html>

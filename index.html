@@ -3,82 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>aviv.dev</title>
+<title>Aviv | aviv.dev</title>
 
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
     font-family:'JetBrains Mono', monospace;
-    background:#050505;
+    background:#020204;
     color:#e5e5e5;
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    overflow-x:hidden;
+}
+
+/* subtle grid background */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+      linear-gradient(rgba(0,255,120,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,120,0.04) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-1;
 }
 
 .container{
-    width:90%;
-    max-width:900px;
+    max-width:1000px;
+    margin:auto;
+    padding:80px 20px;
 }
 
-.terminal{
-    background:#0a0a0a;
-    border:1px solid #111;
-    border-radius:12px;
-    padding:40px;
-    box-shadow:0 0 40px rgba(0,255,120,0.05);
-}
-
+/* header */
 h1{
-    font-size:28px;
+    font-size:42px;
     color:#22c55e;
-    margin-bottom:20px;
+    margin-bottom:10px;
 }
 
-.type{
-    color:#9ca3af;
-    margin-bottom:25px;
+.tagline{
+    opacity:.6;
+    margin-bottom:40px;
 }
 
-.prompt{
+/* terminal box */
+.terminal{
+    background:#050508;
+    border:1px solid #111;
+    border-radius:14px;
+    padding:35px;
+    box-shadow:0 0 60px rgba(0,255,120,0.07);
+}
+
+.line{
+    margin:10px 0;
+    font-size:15px;
+}
+
+.prompt{color:#22c55e}
+
+/* sections */
+.section{
+    margin-top:50px;
+}
+
+.section-title{
     color:#22c55e;
+    margin-bottom:18px;
+    font-size:18px;
 }
 
-.links{
-    margin-top:30px;
-    display:flex;
-    gap:25px;
-    flex-wrap:wrap;
+/* cards */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
 }
 
-a{
+.card{
+    border:1px solid #111;
+    padding:18px;
+    border-radius:10px;
+    background:#050508;
+    transition:.2s;
+}
+
+.card:hover{
+    border:1px solid #22c55e;
+    box-shadow:0 0 15px rgba(34,197,94,.3);
+}
+
+.card a{
     color:#22c55e;
     text-decoration:none;
-    border:1px solid #1a1a1a;
-    padding:10px 16px;
-    border-radius:8px;
-    transition:.2s;
-    font-size:14px;
+    font-size:15px;
 }
 
-a:hover{
-    background:#22c55e;
-    color:black;
-    box-shadow:0 0 15px #22c55e;
-}
-
-.footer{
-    margin-top:40px;
+.card p{
+    opacity:.5;
     font-size:12px;
-    opacity:.4;
+    margin-top:6px;
+}
+
+/* footer */
+.footer{
+    margin-top:70px;
+    opacity:.3;
+    font-size:12px;
 }
 </style>
 </head>
@@ -86,38 +119,67 @@ a:hover{
 <body>
 
 <div class="container">
-    <div class="terminal">
 
-        <h1>aviv.dev</h1>
+<h1>Aviv</h1>
+<div class="tagline">dev // builder // systems</div>
 
-        <div class="type">
-            <span class="prompt">></span> initializing system...
-        </div>
+<div class="terminal">
+    <div class="line"><span class="prompt">></span> initializing aviv.dev</div>
+    <div class="line"><span class="prompt">></span> loading projects...</div>
+    <div class="line"><span class="prompt">></span> status: <span style="color:#22c55e">online</span></div>
+</div>
 
-        <div class="type">
-            <span class="prompt">></span> domain connected ✔
-        </div>
+<!-- TOOLS -->
+<div class="section">
+<div class="section-title">tools</div>
 
-        <div class="type">
-            <span class="prompt">></span> github deployment active
-        </div>
+<div class="grid">
 
-        <div class="type">
-            <span class="prompt">></span> status: <span style="color:#22c55e">online</span>
-        </div>
+<div class="card">
+<a href="#">coming soon</a>
+<p>custom scripts + utilities</p>
+</div>
 
-        <div class="links">
-            <a href="#">tools</a>
-            <a href="#">projects</a>
-            <a href="#">downloads</a>
-            <a href="https://github.com/person10802477" target="_blank">github</a>
-        </div>
+<div class="card">
+<a href="#">coming soon</a>
+<p>automation + dashboards</p>
+</div>
 
-        <div class="footer">
-            aviv.dev // private build environment
-        </div>
+</div>
+</div>
 
-    </div>
+<!-- PROJECTS -->
+<div class="section">
+<div class="section-title">projects</div>
+
+<div class="grid">
+
+<div class="card">
+<a href="#">project placeholder</a>
+<p>builds + experiments</p>
+</div>
+
+</div>
+</div>
+
+<!-- LINKS -->
+<div class="section">
+<div class="section-title">links</div>
+
+<div class="grid">
+
+<div class="card">
+<a href="https://github.com/person10802477" target="_blank">github</a>
+<p>source code</p>
+</div>
+
+</div>
+</div>
+
+<div class="footer">
+aviv.dev // private build environment
+</div>
+
 </div>
 
 </body>
